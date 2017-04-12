@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.singh.pizzachallenge.neworder.NewOrderActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User" />
+
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone" />
+
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity" />
+
+
+        <EditText
+            android:id="@+id/etQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select your toppings" />
+
+        <CheckBox
+            android:id="@+id/pepperoni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pepperoni"
+            android:onClick="onCheckboxClicked"/>
+
+        <CheckBox
+            android:id="@+id/mushrooms"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mushrooms" />
+
+        <CheckBox
+            android:id="@+id/chicken"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="chicken" />
+
+        <CheckBox
+            android:id="@+id/beef"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="beef" />
+
+        <CheckBox
+            android:id="@+id/bacon"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bacon" />
+
+        <CheckBox
+            android:id="@+id/sausage"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sausage" />
+
+        <CheckBox
+            android:id="@+id/olives"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="olives" />
+
+        <CheckBox
+            android:id="@+id/mozzarellaCheese"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mozzarella cheese" />
+
+        <CheckBox
+            android:id="@+id/onions"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="onions" />
+
+
+        <CheckBox
+            android:id="@+id/tomatoes"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tomatoes" />
+
+
+        <CheckBox
+            android:id="@+id/favourite"
+            android:onClick="onCheckboxClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Make this a favourite" />
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order" />
+
+
+    </LinearLayout>
+</ScrollView>

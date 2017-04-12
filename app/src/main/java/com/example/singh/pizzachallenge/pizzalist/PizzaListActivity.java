@@ -1,5 +1,6 @@
 package com.example.singh.pizzachallenge.pizzalist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.pizzalist.DaggerPizzaListComponent;
 import com.example.singh.pizzachallenge.model.PizzaOrders;
+import com.example.singh.pizzachallenge.neworder.NewOrderActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +75,8 @@ public class PizzaListActivity extends AppCompatActivity implements PizzaListCon
 
         int id = item.getItemId();
         if (id == R.id.action_order) {
+            Intent intent = new Intent(PizzaListActivity.this, NewOrderActivity.class);
+            startActivity(intent);
             return true;
         }
 
