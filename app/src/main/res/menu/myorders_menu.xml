@@ -2,22 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_sort"
-        android:orderInCategory="100"
-        android:title="Sort"
-        app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_order"
-        android:orderInCategory="200"
+        android:id="@+id/action_new_order"
+        android:orderInCategory="100"
         android:title="New order"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_my_order"
+        android:id="@+id/action_top_order"
         android:orderInCategory="200"
-        android:title="My orders"
+        android:title="Top order"
         app:showAsAction="never" />
-
 </menu>

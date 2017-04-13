@@ -1,7 +1,10 @@
 package com.example.singh.pizzachallenge.neworder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -11,6 +14,7 @@ import android.widget.Toast;
 import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
 import com.example.singh.pizzachallenge.model.NewOrder;
+import com.example.singh.pizzachallenge.pizzalist.PizzaListActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -92,6 +96,30 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
         NewOrder newOrder = new NewOrder(name, phone, toppingList, quantity, favouriteOrder, cal.getTime().toString());
         presenter.validateInput(newOrder, this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.pizzalist_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == R.id.action_my_order) {
+
+            return true;
+        }
+
+        if (id == R.id.action_top_order) {
+            Intent intent = new Intent(NewOrderActivity.this, PizzaListActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
