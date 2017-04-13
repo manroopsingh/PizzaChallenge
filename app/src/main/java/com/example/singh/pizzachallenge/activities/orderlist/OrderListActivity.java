@@ -43,12 +43,16 @@ public class OrderListActivity extends AppCompatActivity implements OrderListCon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_list);
         ButterKnife.bind(this);
-        DaggerOrderListComponent.create().inject(this);
+        setupDaggerComponent();
         setTitle("My Orders");
         presenter.addView(this);
         setupRecyclerView();
-        presenter.getOrders(this);
+        presenter.getOrders();
 
+    }
+
+    private void setupDaggerComponent() {
+        DaggerOrderListComponent.create().inject(this);
     }
 
     private void setupRecyclerView() {
@@ -89,7 +93,6 @@ public class OrderListActivity extends AppCompatActivity implements OrderListCon
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
         if (id == R.id.action_new_order) {
             Intent intent = new Intent(OrderListActivity.this, NewOrderActivity.class);
@@ -102,7 +105,6 @@ public class OrderListActivity extends AppCompatActivity implements OrderListCon
             startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

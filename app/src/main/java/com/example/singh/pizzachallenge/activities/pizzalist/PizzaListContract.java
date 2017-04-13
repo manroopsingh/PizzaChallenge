@@ -1,7 +1,5 @@
 package com.example.singh.pizzachallenge.activities.pizzalist;
 
-import android.content.Context;
-
 import com.example.singh.pizzachallenge.BasePresenter;
 import com.example.singh.pizzachallenge.BaseView;
 import com.example.singh.pizzachallenge.model.PizzaOrders;
@@ -21,7 +19,7 @@ public interface PizzaListContract {
 
     interface Presenter extends BasePresenter<View>{
 
-        void getPizzaList(Context context);
+        void getPizzaList();
         void showDialog();
     }
 }

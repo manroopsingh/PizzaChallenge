@@ -27,9 +27,9 @@ public class OrderListPresenter implements OrderListContract.Presenter {
     }
 
     @Override
-    public void getOrders(Context context) {
+    public void getOrders() {
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        DatabaseHelper databaseHelper = new DatabaseHelper((Context) view);
         newOrderList.addAll(databaseHelper.getAllOrders());
 
         view.updateRecyclerView(newOrderList);

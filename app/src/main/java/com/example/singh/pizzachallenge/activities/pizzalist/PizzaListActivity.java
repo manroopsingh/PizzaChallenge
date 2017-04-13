@@ -48,7 +48,7 @@ public class PizzaListActivity extends AppCompatActivity implements PizzaListCon
         setTitle("Pizza Rankings");
 
         presenter.addView(this);
-        presenter.getPizzaList(this);
+        presenter.getPizzaList();
 
     }
 

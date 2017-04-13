@@ -47,8 +47,7 @@ public class PizzaListPresenter implements PizzaListContract.Presenter {
     }
 
     @Override
-    public void getPizzaList(Context context) {
-        this.context = context;
+    public void getPizzaList() {
         initializePizzaList();
         for (int i = 0; i < 20; i++) {
             pizzaOrdersTopList.add(pizzaOrdersList.get(i));
@@ -60,7 +59,7 @@ public class PizzaListPresenter implements PizzaListContract.Presenter {
 
     @Override
     public void showDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder((Context) view);
         builder.setTitle("Show top charts")
                 .setItems(R.array.order_top_array, new DialogInterface.OnClickListener() {
                     @Override
@@ -146,7 +145,7 @@ public class PizzaListPresenter implements PizzaListContract.Presenter {
     public String loadJSONFromAsset() {
         String json = null;
         try {
-            InputStream is = context.getAssets().open("pizzas.json");
+            InputStream is = ((Context)view).getAssets().open("pizzas.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

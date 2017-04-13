@@ -21,19 +21,15 @@ public class NewOrderPresenter implements NewOrderContract.Presenter {
 
     @Override
     public void removeView() {
-
         this.view = null;
     }
 
     @Override
-    public void validateInput(NewOrder newOrder, Context context) {
-        this.context = context;
-
+    public void validateInput(NewOrder newOrder) {
 
         if (newOrder.getToppings() == null || newOrder.getPhone() == "" || newOrder.getQuantity() == 0 || newOrder.getUsername() == "")
             view.invalidOrder();
         else {
-
             saveNewOrder(newOrder);
             view.validOrder();
         }
@@ -41,11 +37,9 @@ public class NewOrderPresenter implements NewOrderContract.Presenter {
     }
 
     private void saveNewOrder(NewOrder newOrder) {
-
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        DatabaseHelper databaseHelper = new DatabaseHelper((Context) view);
         databaseHelper.addOrder(newOrder);
         databaseHelper.close();
-
 
 
 

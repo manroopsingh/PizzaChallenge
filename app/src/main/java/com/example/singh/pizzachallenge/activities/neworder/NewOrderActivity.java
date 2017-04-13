@@ -12,13 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.singh.pizzachallenge.R;
-import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
-import com.example.singh.pizzachallenge.model.NewOrder;
 import com.example.singh.pizzachallenge.activities.orderlist.OrderListActivity;
 import com.example.singh.pizzachallenge.activities.pizzalist.PizzaListActivity;
+import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
+import com.example.singh.pizzachallenge.model.NewOrder;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -66,27 +64,20 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
         DaggerNewOrderComponent.create().inject(this);
     }
 
-
     @Override
     public void showError(String error) {
-
     }
 
     @Override
     public void validOrder() {
-
         Toast.makeText(this, "You order have saved", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(NewOrderActivity.this, OrderListActivity.class);
         startActivity(intent);
-
-
     }
 
     @Override
     public void invalidOrder() {
-
         Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
-
     }
 
     @OnClick(R.id.btnOrder)
@@ -95,13 +86,9 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
         String phone = etPhone.getText().toString();
         int quantity = Integer.parseInt(etQuantity.getText().toString());
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Calendar cal = Calendar.getInstance();
-
         NewOrder newOrder = new NewOrder(name, phone, toppingList, quantity, favouriteOrder, cal.getTime().toString());
-        presenter.validateInput(newOrder, this);
-
-
+        presenter.validateInput(newOrder);
     }
 
     @Override
@@ -112,26 +99,21 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
         if (id == R.id.action_my_order) {
             Intent intent = new Intent(NewOrderActivity.this, OrderListActivity.class);
             startActivity(intent);
             return true;
         }
-
         if (id == R.id.action_top_order) {
             Intent intent = new Intent(NewOrderActivity.this, PizzaListActivity.class);
             startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-
     public void onCheckboxClicked(View view) {
-
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
@@ -203,18 +185,15 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
     }
 
     private void removeFromToppings(String topping) {
-
         for (String toppings : toppingList) {
             if (toppings.equals(topping))
                 toppingList.remove(topping);
         }
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         presenter.removeView();
-
     }
 }
