@@ -109,6 +109,9 @@ public class PizzaListActivity extends AppCompatActivity implements PizzaListCon
     }
 
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.removeView();
+    }
 }

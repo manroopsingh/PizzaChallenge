@@ -214,6 +214,7 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        presenter.removeView();
 
     }
 }

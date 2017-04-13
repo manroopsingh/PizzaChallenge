@@ -105,4 +105,10 @@ public class OrderListActivity extends AppCompatActivity implements OrderListCon
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.removeView();
+    }
 }
