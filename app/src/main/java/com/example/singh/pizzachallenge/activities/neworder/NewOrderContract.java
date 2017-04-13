@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.orderlist;
+package com.example.singh.pizzachallenge.activities.neworder;
 
 import android.content.Context;
 
@@ -6,23 +6,23 @@ import com.example.singh.pizzachallenge.BasePresenter;
 import com.example.singh.pizzachallenge.BaseView;
 import com.example.singh.pizzachallenge.model.NewOrder;
 
-import java.util.List;
-
 /**
  * Created by singh on 12-Apr-17.
  */
 
-public interface OrderListContract {
+public interface NewOrderContract {
 
     interface View extends BaseView{
-        void updateRecyclerView(List<NewOrder> orderList);
+        void validOrder();
+        void invalidOrder();
+
 
 
     }
 
     interface Presenter extends BasePresenter<View>{
-        void getOrders(Context context);
 
+        void validateInput(NewOrder newOrder, Context context);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.neworder;
+package com.example.singh.pizzachallenge.activities.neworder;
 
 import android.content.Context;
 

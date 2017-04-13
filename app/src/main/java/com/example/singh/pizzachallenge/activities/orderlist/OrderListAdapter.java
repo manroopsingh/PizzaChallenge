@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.orderlist;
+package com.example.singh.pizzachallenge.activities.orderlist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -73,7 +73,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
                 DatabaseHelper databaseHelper = new DatabaseHelper(context);
                 databaseHelper.updateOrder(newOrder);
-                Toast.makeText(v.getContext(), "Changed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Saved", Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pizzalist.PizzaListActivity">
+        <activity android:name=".activities.pizzalist.PizzaListActivity"/>
+        <activity android:name=".activities.neworder.NewOrderActivity" />
+        <activity android:name=".activities.orderlist.OrderListActivity" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".neworder.NewOrderActivity" />
-        <activity android:name=".orderlist.OrderListActivity"></activity>
     </application>
 
 </manifest>

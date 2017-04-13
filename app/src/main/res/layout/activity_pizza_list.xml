@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="com.example.singh.pizzachallenge.pizzalist.PizzaListActivity">
+    android:background="@color/colorLightGray"
+    tools:context="com.example.singh.pizzachallenge.activities.pizzalist.PizzaListActivity">
 
 
     <android.support.v7.widget.RecyclerView
+        android:background="@color/colorLightGray"
         android:id="@+id/rvPizzaList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

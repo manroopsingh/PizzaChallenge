@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.pizzalist;
+package com.example.singh.pizzachallenge.activities.pizzalist;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.neworder;
+package com.example.singh.pizzachallenge.activities.neworder;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import android.widget.Toast;
 import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
 import com.example.singh.pizzachallenge.model.NewOrder;
-import com.example.singh.pizzachallenge.orderlist.OrderListActivity;
-import com.example.singh.pizzachallenge.pizzalist.PizzaListActivity;
+import com.example.singh.pizzachallenge.activities.orderlist.OrderListActivity;
+import com.example.singh.pizzachallenge.activities.pizzalist.PizzaListActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -106,7 +106,7 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.pizzalist_menu, menu);
+        getMenuInflater().inflate(R.menu.neworder_menu, menu);
         return true;
     }
 

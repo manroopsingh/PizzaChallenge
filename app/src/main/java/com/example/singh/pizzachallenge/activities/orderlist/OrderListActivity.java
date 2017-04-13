@@ -1,4 +1,4 @@
-package com.example.singh.pizzachallenge.orderlist;
+package com.example.singh.pizzachallenge.activities.orderlist;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +12,8 @@ import android.view.MenuItem;
 import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.orderlist.DaggerOrderListComponent;
 import com.example.singh.pizzachallenge.model.NewOrder;
-import com.example.singh.pizzachallenge.neworder.NewOrderActivity;
-import com.example.singh.pizzachallenge.pizzalist.PizzaListActivity;
+import com.example.singh.pizzachallenge.activities.neworder.NewOrderActivity;
+import com.example.singh.pizzachallenge.activities.pizzalist.PizzaListActivity;
 
 import java.util.ArrayList;
 import java.util.List;

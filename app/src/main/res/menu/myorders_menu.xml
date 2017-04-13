@@ -12,6 +12,6 @@
     <item
         android:id="@+id/action_top_order"
         android:orderInCategory="200"
-        android:title="Top order"
+        android:title="Top orders"
         app:showAsAction="never" />
 </menu>

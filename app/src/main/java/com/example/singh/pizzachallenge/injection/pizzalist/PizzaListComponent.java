@@ -1,6 +1,6 @@
 package com.example.singh.pizzachallenge.injection.pizzalist;
 
-import com.example.singh.pizzachallenge.pizzalist.PizzaListActivity;
+import com.example.singh.pizzachallenge.activities.pizzalist.PizzaListActivity;
 
 import dagger.Component;
 
