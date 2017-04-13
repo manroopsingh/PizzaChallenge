@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Toppings"
             android:textColor="@android:color/black"
-            android:textStyle="bold|italic" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/tvPizzaToppings"
@@ -37,7 +37,7 @@
         android:background="@color/colorWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="vertical">
 
 
@@ -47,7 +47,7 @@
             android:text="Orders"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
-            android:textStyle="bold|italic" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/tvPizzaOrders"

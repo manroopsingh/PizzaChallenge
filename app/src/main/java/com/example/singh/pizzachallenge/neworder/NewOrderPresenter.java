@@ -5,9 +5,6 @@ import android.content.Context;
 import com.example.singh.pizzachallenge.helper.DatabaseHelper;
 import com.example.singh.pizzachallenge.model.NewOrder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by singh on 12-Apr-17.
  */
@@ -15,7 +12,6 @@ import java.util.List;
 public class NewOrderPresenter implements NewOrderContract.Presenter {
 
     NewOrderContract.View view;
-    List<NewOrder> newOrderList = new ArrayList<>();
     Context context;
 
     @Override
@@ -48,9 +44,9 @@ public class NewOrderPresenter implements NewOrderContract.Presenter {
 
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         databaseHelper.addOrder(newOrder);
+        databaseHelper.close();
 
 
-        newOrderList.addAll(databaseHelper.getAllOrders());
 
 
     }

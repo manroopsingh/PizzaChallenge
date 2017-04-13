@@ -13,6 +13,7 @@ import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.pizzalist.DaggerPizzaListComponent;
 import com.example.singh.pizzachallenge.model.PizzaOrders;
 import com.example.singh.pizzachallenge.neworder.NewOrderActivity;
+import com.example.singh.pizzachallenge.orderlist.OrderListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,10 +87,8 @@ public class PizzaListActivity extends AppCompatActivity implements PizzaListCon
         }
 
         if (id == R.id.action_my_order) {
-
-
-
-
+            Intent intent = new Intent(PizzaListActivity.this, OrderListActivity.class);
+            startActivity(intent);
             return true;
         }
 

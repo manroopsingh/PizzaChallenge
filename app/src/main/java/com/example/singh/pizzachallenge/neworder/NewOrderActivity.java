@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
 import com.example.singh.pizzachallenge.model.NewOrder;
+import com.example.singh.pizzachallenge.orderlist.OrderListActivity;
 import com.example.singh.pizzachallenge.pizzalist.PizzaListActivity;
 
 import java.text.DateFormat;
@@ -49,7 +50,7 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
 
     List<String> toppingList = new ArrayList<>();
-    private boolean favouriteOrder;
+    private boolean favouriteOrder = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,9 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
     public void validOrder() {
 
         Toast.makeText(this, "You order have saved", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(NewOrderActivity.this, OrderListActivity.class);
+        startActivity(intent);
+
 
     }
 
@@ -96,6 +100,8 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
         NewOrder newOrder = new NewOrder(name, phone, toppingList, quantity, favouriteOrder, cal.getTime().toString());
         presenter.validateInput(newOrder, this);
+
+
     }
 
     @Override
@@ -109,7 +115,8 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
 
         int id = item.getItemId();
         if (id == R.id.action_my_order) {
-
+            Intent intent = new Intent(NewOrderActivity.this, OrderListActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -172,12 +179,6 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
                 else
                     removeFromToppings("olives");
                 break;
-            case R.id.mozzarellaCheese:
-                if (checked)
-                    toppingList.add("mozzarella cheese");
-                else
-                    removeFromToppings("mozzarella cheese");
-                break;
             case R.id.onions:
                 if (checked)
                     toppingList.add("onions");
@@ -207,6 +208,12 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
             if (toppings.equals(topping))
                 toppingList.remove(topping);
         }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
     }
 }

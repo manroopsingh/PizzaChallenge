@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     tools:context="com.example.singh.pizzachallenge.neworder.NewOrderActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -15,7 +15,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User" />
+            android:text="User"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold|italic" />
 
 
         <EditText
@@ -26,29 +28,38 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone" />
+            android:text="Phone"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold|italic" />
 
 
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quantity" />
+            android:text="Quantity"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold|italic" />
 
 
         <EditText
             android:id="@+id/etQuantity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select your toppings" />
+            android:text="Select your toppings"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold|italic" />
 
         <CheckBox
             android:id="@+id/pepperoni"
@@ -99,12 +110,6 @@
             android:layout_height="wrap_content"
             android:text="olives" />
 
-        <CheckBox
-            android:id="@+id/mozzarellaCheese"
-            android:onClick="onCheckboxClicked"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="mozzarella cheese" />
 
         <CheckBox
             android:id="@+id/onions"
@@ -127,7 +132,7 @@
             android:onClick="onCheckboxClicked"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="Make this a favourite" />
 
         <Button

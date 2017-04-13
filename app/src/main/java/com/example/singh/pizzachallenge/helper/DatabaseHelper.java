@@ -75,7 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PHONE, newOrder.getPhone());
         values.put(COLUMN_QUANTITY, newOrder.getQuantity());
         values.put(COLUMN_TOPPINGS, newOrder.getToppings().toString());
-        values.put(COLUMN_FAVOURITE, newOrder.isFavourite());
+        values.put(COLUMN_FAVOURITE, String.valueOf(newOrder.isFavourite()));
 
 
         // 3. insert
@@ -109,6 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Gson gson = new Gson();
                 Type listType = new TypeToken<List<String>>(){}.getType();
 
+                System.out.println("xxxxxxxxxxx" + cursor.getString(5));
                 newOrder.setToppings((List<String>) gson.fromJson(cursor.getString(4),listType));
                 newOrder.setFavourite(Boolean.parseBoolean(cursor.getString(5)));
                 // Add book to books
@@ -126,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // 2. create ContentValues to add key "column"/value
         ContentValues values = new ContentValues();
-        values.put(COLUMN_FAVOURITE, newOrder.isFavourite());
+        values.put(COLUMN_FAVOURITE, String.valueOf(newOrder.isFavourite()));
 
         // 3. updating row
         int i = db.update(TABLE_ORDERS, //table

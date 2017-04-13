@@ -76,4 +76,15 @@ public class NewOrder {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public String getToppingsString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < toppings.size(); i++) {
+            sb.append(toppings.get(i));
+            if (i != toppings.size() - 1)
+                sb.append(", ");
+        }
+        return sb.toString();
+
+    }
 }
