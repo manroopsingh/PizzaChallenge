@@ -16,8 +16,6 @@ public interface NewOrderContract {
         void validOrder();
         void invalidOrder();
 
-
-
     }
 
     interface Presenter extends BasePresenter<View>{
