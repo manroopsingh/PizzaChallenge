@@ -13,18 +13,33 @@ public class NewOrder {
     private List<String> toppings;
     private int quantity;
     private boolean favourite;
+    private String timestamp;
 
-    public NewOrder(String username, String phone, List<String> toppings, int quantity, boolean favourite) {
+    public NewOrder(String username, String phone, List<String> toppings, int quantity, boolean favourite, String timestamp) {
         this.username = username;
         this.phone = phone;
         this.toppings = toppings;
         this.quantity = quantity;
         this.favourite = favourite;
+        this.timestamp = timestamp;
+    }
+
+    public NewOrder() {
+
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public boolean isFavourite() {
         return favourite;
     }
+
 
     public void setFavourite(boolean favourite) {
         this.favourite = favourite;

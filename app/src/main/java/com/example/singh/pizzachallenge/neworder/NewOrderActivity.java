@@ -12,7 +12,10 @@ import com.example.singh.pizzachallenge.R;
 import com.example.singh.pizzachallenge.injection.neworder.DaggerNewOrderComponent;
 import com.example.singh.pizzachallenge.model.NewOrder;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -83,8 +86,12 @@ public class NewOrderActivity extends AppCompatActivity implements NewOrderContr
         String name = etName.getText().toString();
         String phone = etPhone.getText().toString();
         int quantity = Integer.parseInt(etQuantity.getText().toString());
-        NewOrder newOrder = new NewOrder(name, phone, toppingList, quantity, favouriteOrder);
-        presenter.validateInput(newOrder);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+
+        NewOrder newOrder = new NewOrder(name, phone, toppingList, quantity, favouriteOrder, cal.getTime().toString());
+        presenter.validateInput(newOrder, this);
     }
 
 

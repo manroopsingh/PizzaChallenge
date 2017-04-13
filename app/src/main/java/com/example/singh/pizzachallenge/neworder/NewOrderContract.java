@@ -1,5 +1,7 @@
 package com.example.singh.pizzachallenge.neworder;
 
+import android.content.Context;
+
 import com.example.singh.pizzachallenge.BasePresenter;
 import com.example.singh.pizzachallenge.BaseView;
 import com.example.singh.pizzachallenge.model.NewOrder;
@@ -20,7 +22,7 @@ public interface NewOrderContract {
 
     interface Presenter extends BasePresenter<View>{
 
-        void validateInput(NewOrder newOrder);
+        void validateInput(NewOrder newOrder, Context context);
     }
 
 }

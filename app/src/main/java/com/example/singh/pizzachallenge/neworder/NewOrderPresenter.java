@@ -1,5 +1,8 @@
 package com.example.singh.pizzachallenge.neworder;
 
+import android.content.Context;
+
+import com.example.singh.pizzachallenge.helper.DatabaseHelper;
 import com.example.singh.pizzachallenge.model.NewOrder;
 
 import java.util.ArrayList;
@@ -13,6 +16,7 @@ public class NewOrderPresenter implements NewOrderContract.Presenter {
 
     NewOrderContract.View view;
     List<NewOrder> newOrderList = new ArrayList<>();
+    Context context;
 
     @Override
     public void addView(NewOrderContract.View view) {
@@ -26,25 +30,27 @@ public class NewOrderPresenter implements NewOrderContract.Presenter {
     }
 
     @Override
-    public void validateInput(NewOrder newOrder) {
+    public void validateInput(NewOrder newOrder, Context context) {
+        this.context = context;
 
 
-        if(newOrder.getToppings()==null || newOrder.getPhone()=="" || newOrder.getQuantity()==0 || newOrder.getUsername() == "")
+        if (newOrder.getToppings() == null || newOrder.getPhone() == "" || newOrder.getQuantity() == 0 || newOrder.getUsername() == "")
             view.invalidOrder();
-        else{
+        else {
 
             saveNewOrder(newOrder);
-
             view.validOrder();
         }
 
     }
 
     private void saveNewOrder(NewOrder newOrder) {
-        //Call database
 
-        newOrderList.add(newOrder);
-        System.out.println(newOrder.getToppings());
+        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        databaseHelper.addOrder(newOrder);
+
+
+        newOrderList.addAll(databaseHelper.getAllOrders());
 
 
     }
