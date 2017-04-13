@@ -1,6 +1,6 @@
 # Pizza Shop Challenge
 
-####Problem  
+#### Problem  
 Finding Popular Build-Your-Own Pizzas
 A pizza chain wants to know which topping combinations are most popular for Build Your Own pizzas.
  
@@ -21,7 +21,7 @@ Feel free to contact us in case of any queries.
 Please upload the project on a Github account, and include a README file explaining your implementation.
 You should create separate branches from develop for every feature and finally merge them into master.
 
-#### Approach  
+### Approach  
 ##### Architecture: 
 MVP  
 ##### Libraries used:
@@ -51,10 +51,10 @@ CardView (Amdroid Design)
 3. NewOrder Activity: Create new order by selecting multiple toppings. You can also save your order as favourite.
 4. MyOrders Activity: List of orders made through the app.
 
-#### Utility
+##### Utility
 1. DatabaseHelper: SQLiteOpenHelper class to manage databse and perform CRUD operations
 
-#### Features
+##### Features
 1. Sorted top pizza orders list, which can be changed from Overflow menu "Sort" item.
 2. Create custom pizza order by entering your personal information and selecting multiple pizza topping. You can also mark your order to be favourite. (Database supported)
 3. View your previous ordered history through "My Orders". You can change your favourite orders here. (Database supported)
